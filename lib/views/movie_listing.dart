@@ -10,7 +10,8 @@ class MovieListing extends StatefulWidget {
 }
 
 class _MovieListingState extends State<MovieListing> {
-  int _ticketQuantity = 0; // stores ticket choice
+  int _ticketQuantity = 0;
+  String _bookingMessage = ''; // stores ticket choice
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,7 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Column(
+      body: Column( // Column to hold the movie details and the ticket selection
         children: [
           Container(
             color: cinemaSurface,
@@ -35,7 +36,7 @@ class _MovieListingState extends State<MovieListing> {
           ),
           const Text('Select Quantities'),
           Row(
-            children:[
+            children:[ // Row to hold the dropdown and the text
               DropdownMenu<int>(
                 initialSelection: 0,
                 onSelected: (int? value) {
@@ -45,7 +46,7 @@ class _MovieListingState extends State<MovieListing> {
                     });
                   }
                 },
-                dropdownMenuEntries: const [
+                dropdownMenuEntries: const [ // list of ticket quantities
                   DropdownMenuEntry(value: 0, label: '0'),
                   DropdownMenuEntry(value: 1, label: '1'),
                   DropdownMenuEntry(value: 2, label: '2'),
@@ -54,10 +55,18 @@ class _MovieListingState extends State<MovieListing> {
                   DropdownMenuEntry(value: 5, label: '5'),
                 ],
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 12), //adds spacing between the dropdown and the text
               const Text('Adult (£7.50)'),
             ],
           ),
+          ElevatedButton( // button to add tickets to booking
+            onPressed: () { //when clicked, setState updates the booking message to show how many tickets were added
+              setState(() => _bookingMessage = 'Added $_ticketQuantity tickets to your booking');
+            },
+            child: const Text('Add to Booking'),
+          ),
+          const SizedBox(height: 12),
+          Text(_bookingMessage), // displays the booking message
         ],
       ),
     );
