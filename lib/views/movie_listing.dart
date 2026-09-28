@@ -20,15 +20,25 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Container(
-        color: cinemaSurface,
-        child: Column(
-          children: [
-            Text('Spider-Man Across the Spider-Verse (2023) (PG)'),
-            Text('Southsea Cinema Room'),
-            Text('Thursday 22 Oct 2026, 18:00'),
-          ],
-        ),
+      body: Column(
+        children: [
+          Container(
+            color: cinemaSurface,
+            child: Column(
+              children: [
+                Text('Spider-Man Across the Spider-Verse (2023) (PG)'),
+                Text('Southsea Cinema Room'),
+                Text('Thursday 22 Oct 2026, 18:00'),
+              ],
+            ),
+          ),
+          const Text('Select Quantities'),
+          Row(
+            children: const [
+              Text('Tickets: '),
+            ],
+          ),
+        ],
       ),
     );
   }
