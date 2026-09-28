@@ -27,10 +27,11 @@ class _MovieListingState extends State<MovieListing> {
           Container(
             color: cinemaSurface,
             child: Column(
-              children: [
-                Text('Spider-Man Across the Spider-Verse (2023) (PG)'),
-                Text('Southsea Cinema Room'),
-                Text('Thursday 22 Oct 2026, 18:00'),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const[
+                Text('Spider-Man Across the Spider-Verse (2023) (PG)', style: cinemaHeaderStyle),
+                Text('Southsea Cinema Room', style: TextStyle(color: cinemaFontMuted)),
+                Text('Thursday 22 Oct 2026, 18:00', style: TextStyle(color: cinemaFontMuted)),
               ],
             ),
           ),
