@@ -5,16 +5,16 @@ void main() {
   group('Movie model tests', () {
     test('creates Movie instance and formats price correctly', () {
       const movie = Movie(
-        id: 'test-id',
-        title: 'Test Movie',
-        synopsis: 'A test film synopsis.',
-        ageRating: '12A',
+        id: 'howl',
+        title: 'Howls Moving Castle',
+        synopsis: 'A young milliner is turned into an elderly woman...',
+        ageRating: 'PG',
         price: 7.5,
-        imagePath: 'assets/images/phantom.jpeg',
+        imagePath: 'assets/images/howl.jpg',
         screeningTime: 'Sunday 4 Oct 2026 15:00',
       );
 
-      expect(movie.title, 'Test Movie');
+      expect(movie.title, 'Howls Moving Castle');
       expect(movie.formattedPrice, '£7.50');
     });
   });
