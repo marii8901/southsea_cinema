@@ -22,22 +22,26 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Column( // Column to hold the movie details and the ticket selection
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
             color: cinemaSurface,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const[
-                Text('Spider-Man Across the Spider-Verse (2023) (PG)', style: cinemaHeaderStyle),
-                Text('Southsea Cinema Room', style: TextStyle(color: cinemaFontMuted)),
-                Text('Thursday 22 Oct 2026, 18:00', style: TextStyle(color: cinemaFontMuted)),
+              children: const [
+                Text('Spider-Man Across the Spider-Verse (2023) (PG)',
+                    style: cinemaHeaderStyle),
+                Text('Southsea Cinema Room',
+                    style: TextStyle(color: cinemaFontMuted)),
+                Text('Thursday 22 Oct 2026, 18:00',
+                    style: TextStyle(color: cinemaFontMuted)),
               ],
             ),
           ),
           const Text('Select Quantities'),
           Row(
-            children:[ // Row to hold the dropdown and the text
+            children: [
               DropdownMenu<int>(
                 initialSelection: 0,
                 onSelected: (int? value) {
@@ -47,7 +51,8 @@ class _MovieListingState extends State<MovieListing> {
                     });
                   }
                 },
-                dropdownMenuEntries: const [ // list of ticket quantities
+                dropdownMenuEntries: const [
+                  // list
                   DropdownMenuEntry(value: 0, label: '0'),
                   DropdownMenuEntry(value: 1, label: '1'),
                   DropdownMenuEntry(value: 2, label: '2'),
@@ -56,18 +61,21 @@ class _MovieListingState extends State<MovieListing> {
                   DropdownMenuEntry(value: 5, label: '5'),
                 ],
               ),
-              const SizedBox(width: 12), //adds spacing between the dropdown and the text
+              const SizedBox(width: 12),
               const Text('Adult (£7.50)'),
             ],
           ),
-          ElevatedButton( // button to add tickets to booking
-            onPressed: () { //when clicked, setState updates the booking message to show how many tickets were added
-              setState(() => _bookingMessage = 'Added $_ticketQuantity tickets to your booking');
+          ElevatedButton(
+            // button to add tickets
+            onPressed: () {
+              //when clicked, setState updates the booking message
+              setState(() => _bookingMessage =
+                  'Added $_ticketQuantity tickets to your booking');
             },
             child: const Text('Add to Booking'),
           ),
           const SizedBox(height: 12),
-          Text(_bookingMessage), // displays the booking message
+          Text(_bookingMessage),
         ],
       ),
     );

@@ -13,7 +13,7 @@ class Movie {
     required this.synopsis,
     required this.ageRating,
     required this.screeningTime,
-    required this. price,
+    required this.price,
     required this.imagePath,
   });
 

@@ -27,7 +27,7 @@ class MovieCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12.0),
-            
+
             // 2. Title and Age Rating Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +42,8 @@ class MovieCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(4.0),
@@ -82,7 +83,8 @@ class MovieCard extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.0), // Brand style: squared buttons
+                    borderRadius: BorderRadius.circular(
+                        4.0), // Brand style: squared buttons
                   ),
                 ),
                 onPressed: () {
