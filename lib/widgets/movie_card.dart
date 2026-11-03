@@ -88,7 +88,7 @@ class MovieCard extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  print('Booking clicked for ${movie.title}');
+                  debugPrint('Booking clicked for ${movie.title}');
                 },
                 child: Text('Book Ticket (£${movie.price.toStringAsFixed(2)})'),
               ),
