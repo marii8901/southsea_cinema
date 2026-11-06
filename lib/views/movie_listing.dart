@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -29,11 +32,15 @@ class _MovieListingState extends State<MovieListing> {
             color: cinemaSurface,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text('Spider-Man Across the Spider-Verse (2023) (PG)',
-                    style: cinemaHeaderStyle),
-                Text('Southsea Cinema Room',
-                    style: TextStyle(color: cinemaFontMuted)),
+              children: [
+                Text(
+                  '${widget.movie.title} (${widget.movie.ageRating})',
+                  style: cinemaHeaderStyle,
+                ),
+                Text(
+                  widget.movie.screeningTime,
+                  style: const TextStyle(color: cinemaFontMuted),
+                ),
                 Text('Thursday 22 Oct 2026, 18:00',
                     style: TextStyle(color: cinemaFontMuted)),
               ],
