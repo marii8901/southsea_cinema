@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieListing extends StatefulWidget {
   final Movie movie;
@@ -69,14 +70,17 @@ class _MovieListingState extends State<MovieListing> {
               const Text('Adult (£7.50)'),
             ],
           ),
-          ElevatedButton(
-            // button to add tickets
-            onPressed: () {
-              //when clicked, setState updates the booking message
-              setState(() => _bookingMessage =
-                  'Added $_ticketQuantity tickets to your booking');
-            },
-            child: const Text('Add to Booking'),
+          SizedBox(
+            width: double.infinity,
+            child: PrimaryButton(
+              label: 'Add to Booking',
+              onPressed: () {
+                setState(() {
+                  _bookingMessage =
+                      'Added $_ticketQuantity tickets to your booking';
+                });
+              },
+            ),
           ),
           const SizedBox(height: 12),
           Text(_bookingMessage),

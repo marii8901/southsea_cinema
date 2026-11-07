@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
@@ -85,12 +86,8 @@ class MovieCard extends StatelessWidget {
             // 5. Booking Button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                ),
+              child: PrimaryButton(
+                label: 'Book Ticket (£${movie.price.toStringAsFixed(2)})',
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -99,7 +96,6 @@ class MovieCard extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text('Book Ticket (£${movie.price.toStringAsFixed(2)})'),
               ),
             ),
           ],
