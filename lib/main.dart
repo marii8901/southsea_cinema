@@ -29,8 +29,20 @@ class SouthseaCinemaApp extends StatelessWidget {
         )
       ),
       initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeView(),
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) {
+          return const HomeView();
+        },
+        '/basket': (BuildContext context) {
+          return const Scaffold(
+            body: Center(child: Text('My Basket')),
+          );
+        },
+        '/settings': (BuildContext context) {
+          return const Scaffold(
+            body: Center(child: Text('My Settings')),
+          );
+        },
       },
     );
   }
