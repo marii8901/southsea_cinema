@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
+import 'package:southsea_cinema/views/basket_view.dart';
 
 void main() {
   runApp(const SouthseaCinemaApp());
@@ -26,7 +27,7 @@ class SouthseaCinemaApp extends StatelessWidget {
           iconTheme: IconThemeData(color: cinemaBrand),
           titleTextStyle: cinemaHeaderStyle,
           elevation: 0,
-        )
+        ),
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
@@ -34,9 +35,7 @@ class SouthseaCinemaApp extends StatelessWidget {
           return const HomeView();
         },
         '/basket': (BuildContext context) {
-          return const Scaffold(
-            body: Center(child: Text('My Basket')),
-          );
+          return const BasketView();
         },
         '/settings': (BuildContext context) {
           return const Scaffold(

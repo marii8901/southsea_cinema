@@ -3,6 +3,7 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/primary_button.dart';
+import 'package:southsea_cinema/repositories/basket_repository.dart';
 
 class MovieListing extends StatefulWidget {
   final Movie movie;
@@ -75,15 +76,15 @@ class _MovieListingState extends State<MovieListing> {
             child: PrimaryButton(
               label: 'Add to Booking',
               onPressed: () {
-                setState(() {
-                  _bookingMessage =
-                      'Added $_ticketQuantity tickets to your booking';
-                });
+                if (_ticketQuantity > 0) {
+                  for (int i = 0; i < _ticketQuantity; i++) {
+                    BasketRepository.instance.addItem(widget.movie);
+                  }
+                  Navigator.pushNamed(context, '/basket');
+                }
               },
             ),
           ),
-          const SizedBox(height: 12),
-          Text(_bookingMessage),
         ],
       ),
     );

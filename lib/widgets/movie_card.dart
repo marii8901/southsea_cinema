@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
 import 'package:southsea_cinema/widgets/primary_button.dart';
+import 'package:southsea_cinema/repositories/basket_repository.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
