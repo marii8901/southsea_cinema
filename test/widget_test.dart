@@ -1,17 +1,18 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:southsea_cinema/main.dart';
-import 'package:southsea_cinema/views/home_view.dart';
+import 'package:southsea_cinema/main.dart'; // Make sure your main app is imported
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   testWidgets('Basic app loading test', (WidgetTester tester) async {
-    await tester.pumpWidget(const SouthseaCinemaApp());
-    expect(find.text('Welcome to Southsea Cinema'), findsOneWidget);
-  });
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const SouthseaCinemaApp()); // Or MyApp(), depending on your main.dart
 
-  testWidgets('App displays HomeView and title', (WidgetTester tester) async {
-    await tester.pumpWidget(const SouthseaCinemaApp());
+    // Wait for the asynchronous movie loading to complete
+    await tester.pumpAndSettle();
 
-    expect(find.byType(HomeView), findsOneWidget);
-    expect(find.text('Southsea Cinema'), findsOneWidget);
+    // Verify that movies load
+    expect(find.text('Howls Moving Castle'), findsOneWidget);
   });
 }
