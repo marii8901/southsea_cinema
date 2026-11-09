@@ -138,7 +138,8 @@ class _BasketViewState extends State<BasketView> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(backgroundColor: cinemaBrand),
                   onPressed: () => setState(() {}),
-                  child: const Text('UPDATE ORDER', style: TextStyle(color: Colors.white)),
+                  child: const Text('UPDATE ORDER',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               const SizedBox(width: 12),
@@ -151,7 +152,8 @@ class _BasketViewState extends State<BasketView> {
                       _confirmationMessage = 'Thank you for your order!';
                     });
                   },
-                  child: const Text('BUY TICKETS', style: TextStyle(color: Colors.white)),
+                  child: const Text('BUY TICKETS',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
             ],

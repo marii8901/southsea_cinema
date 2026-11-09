@@ -7,7 +7,8 @@ void main() {
 
   testWidgets('Basic app loading test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const SouthseaCinemaApp()); // Or MyApp(), depending on your main.dart
+    await tester.pumpWidget(
+        const SouthseaCinemaApp()); // Or MyApp(), depending on your main.dart
 
     // Wait for the asynchronous movie loading to complete
     await tester.pumpAndSettle();

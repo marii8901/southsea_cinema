@@ -19,13 +19,15 @@ void main() {
     BasketRepository.instance.clear();
   });
 
-  testWidgets('BasketView displays empty message when basket has no items', (WidgetTester tester) async {
+  testWidgets('BasketView displays empty message when basket has no items',
+      (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(home: BasketView()));
 
     expect(find.text('Your basket is empty.'), findsOneWidget);
   });
 
-  testWidgets('BasketView renders items and removes item when delete pressed', (WidgetTester tester) async {
+  testWidgets('BasketView renders items and removes item when delete pressed',
+      (WidgetTester tester) async {
     BasketRepository.instance.addItem(testMovie);
 
     await tester.pumpWidget(const MaterialApp(home: BasketView()));

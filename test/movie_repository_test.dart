@@ -22,7 +22,7 @@ void main() {
       final movie = repo.getMovieById('wrong-id');
       expect(movie, isNull);
     });
-      
+
     test('loadMoviesFromAsset reads the bundled JSON catalogue', () async {
       final repo = MovieRepository();
       final List<Movie> movies = await repo.loadMoviesFromAsset();
