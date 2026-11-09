@@ -16,7 +16,6 @@ class MovieListing extends StatefulWidget {
 
 class _MovieListingState extends State<MovieListing> {
   int _ticketQuantity = 0;
-  String _bookingMessage = ''; // stores ticket choice
   @override
   Widget build(BuildContext context) {
     return Scaffold(
