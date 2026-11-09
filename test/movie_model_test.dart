@@ -18,4 +18,40 @@ void main() {
       expect(movie.formattedPrice, '£7.50');
     });
   });
+
+  test('Movie.fromJson converts map to Movie correctly and toJson returns matching map', () {
+      final Map<String, dynamic> movieMap = <String, dynamic>{
+        'id': 'movie_1',
+        'title': 'Howls Moving Castle',
+        'synopsis': 'A magical tale',
+        'ageRating': 'PG',
+        'screeningTime': '15:00',
+        'price': 7.50,
+        'imagePath': 'assets/images/howl.jpg',
+      };
+
+      final Movie movie = Movie.fromJson(movieMap);
+
+      expect(movie.id, 'movie_1');
+      expect(movie.title, 'Howls Moving Castle');
+      expect(movie.price, 7.50);
+      expect(movie.toJson(), movieMap);
+    });
+
+    test('Movie.fromJson handles whole-number prices by converting to double', () {
+      final Map<String, dynamic> movieMap = <String, dynamic>{
+        'id': 'movie_2',
+        'title': 'Spirited Away',
+        'synopsis': 'A journey into spirit world',
+        'ageRating': 'PG',
+        'screeningTime': '18:00',
+        'price': 7, // Whole-number integer price
+        'imagePath': 'assets/images/spirited.jpg',
+      };
+
+      final Movie movie = Movie.fromJson(movieMap);
+
+      expect(movie.price, isA<double>());
+      expect(movie.price, 7.0);
+    });
 }

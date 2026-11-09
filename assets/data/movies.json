@@ -1,0 +1,20 @@
+[
+    {
+        "id": "movie_1",
+        "title": "Howls Moving Castle",
+        "synopsis": "",
+        "ageRating": "PG",
+        "screeningTime": "15:00",
+        "price": 7.50,
+        "imagePath": "assets/images/spirited.jpg"
+    },
+    {
+        "id": "movie_2",
+        "title": "Spirited Away",
+        "synopsis": "",
+        "ageRating": "PG",
+        "screeningTime": "18:00",
+        "price": 7.50,
+        "imagePath": "assets/images/howl.jpg"
+    }
+]
