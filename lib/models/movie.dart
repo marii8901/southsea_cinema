@@ -22,12 +22,12 @@ class Movie {
   factory Movie.fromJson(Map<String, dynamic> json) {
     final String id = json['id'] as String;
     final String title = json['title'] as String;
-    final String synopsis = json['synopsis'] as String;
-    final String ageRating = json['ageRating'] as String;
-    final String screeningTime = json['screeningTime'] as String;
+    final String synopsis = (json['synopsis'] ?? '') as String;
+    final String ageRating = (json['ageRating'] ?? json['age_rating'] ?? '') as String;
+    final String screeningTime = (json['screeningTime'] ?? json['screening_time'] ?? '') as String;
     final num priceNumber = json['price'] as num;
     final double price = priceNumber.toDouble();
-    final String imagePath = json['imagePath'] as String;
+    final String imagePath = (json['imagePath'] ?? json['image_path'] ?? '') as String;
 
     return Movie(
       id: id,

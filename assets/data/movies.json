@@ -2,7 +2,7 @@
     {
         "id": "movie_1",
         "title": "Howls Moving Castle",
-        "synopsis": "",
+        "synopsis": "Howl's Moving Castle is a 2004 Japanese animated fantasy film by Studio Ghibli, directed by Hayao Miyazaki and adapted from Diana Wynne Jones's 1986 novel",
         "ageRating": "PG",
         "screeningTime": "15:00",
         "price": 7.50,
@@ -11,7 +11,7 @@
     {
         "id": "movie_2",
         "title": "Spirited Away",
-        "synopsis": "",
+        "synopsis": "In Hayao Miyazaki's Oscar-winning anime Spirited Away, 10-year-old Chihiro and her parents stumble upon an abandoned amusement park that serves as a gateway to a mystical world of spirits and gods.",
         "ageRating": "PG",
         "screeningTime": "18:00",
         "price": 7.50,
