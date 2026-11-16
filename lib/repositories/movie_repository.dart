@@ -22,7 +22,7 @@ class MovieRepository {
     return loadedMovies;
   }
 
-  // ADD THIS CACHE CHECK HERE:
+
   List<Movie> getMovies() {
     final List<Movie>? cachedMovies = _cachedMovies;
     if (cachedMovies != null) {
